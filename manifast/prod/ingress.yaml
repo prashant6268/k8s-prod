@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: irctc-prod-ingress
-  namespace: irctc-prod
+  name: k8s-prod-ingress
+  namespace: k8s-prod
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -14,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: irctc-prod-service
+                name: k8s-prod-service
                 port:
                   number: 80
